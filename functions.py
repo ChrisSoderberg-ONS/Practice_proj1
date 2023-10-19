@@ -6,7 +6,16 @@ import numpy as np
 # Functions
 
 def dataframe_multiply(a, b):
-## Implement matrix multiplication for two numeric dataframes a and b
+    """Function to implement matrix multiplication for two numeric Pandas DataFrame
+
+    Args:
+        a (pandas.core.frame.DataFrame): A Pandas DataFrame
+        b (pandas.core.frame.DataFrame): A Pandas DataFrame
+
+    Returns:
+        The product of a and b as a Pandas DataFrame
+
+    """
 
     # check types - all data in a and b must be numeric
     # force convert data in each column to numeric (non numeric converts to null) and check notnull == True
@@ -60,7 +69,23 @@ def dataframe_multiply(a, b):
     return product
 
 def random_dataframe(n, m):
-## Returns a dataframe of random integers (0-10) with dimensions n x m
+    """Creates a Pandas DataFrame of an n x m matrix populated with random integers (between 0-10)
+    
+    Args:
+        n (int): Number of rows in output DataFrame
+        m (int): Number of columns in output DataFrame
+
+    Returns:
+        A Pandas DataFrame of dimensions n x m populated with random integers (between 0-10)
+
+    """
+
+    # throw error for non-integer arguments
+    if(type(n) != int):
+        raise TypeError('Arguments must be of type int')
+    
+    if(type(m) != int):
+        raise TypeError('Arguments must be of type int')
 
     # throw error for bad input
     if(n < 1 | m < 1):
@@ -88,7 +113,19 @@ def random_dataframe(n, m):
     return df
 
 def identity_function(n):
-## Given the parameter n, generate the n x n identity matrix as a dataframe
+    """Creates a Pandas DataFrame of the n x n identity matrix
+
+    Args:
+        n (int): Dimension of the n x n identity matrix
+    
+    Returns:
+        A Pandas DataFrame of dimensions n x n representing the identity matrix
+        
+    """
+
+    # throw error for non-integer arguments
+    if(type(n) != int):
+        raise TypeError('Arguments must be of type int')
 
     # throw error for bad input
     if(n < 1):
